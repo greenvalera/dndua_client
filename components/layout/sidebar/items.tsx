@@ -2,7 +2,7 @@ import PeopleAltOutlinedIcon from '@mui/icons-material/PeopleAltOutlined';
 import HandymanOutlinedIcon from '@mui/icons-material/HandymanOutlined';
 import HikingOutlinedIcon from '@mui/icons-material/HikingOutlined';
 import MenuBookOutlinedIcon from '@mui/icons-material/MenuBookOutlined';
-import {ReactNode} from "react";
+import React, {ReactNode} from "react";
 
 export interface MenuItem {
   icon?: ReactNode,
