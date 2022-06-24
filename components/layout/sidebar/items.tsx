@@ -115,11 +115,11 @@ export const items: MenuItem[] = [
   {
     icon: <MenuBookOutlinedIcon />,
     title: "Заклинання",
-    to: '/spells',
+    to: '/spell',
   },
   {
     icon: <HandymanOutlinedIcon />,
     title: "Предмети",
-    to: '/items',
+    to: '/item',
   }
 ];

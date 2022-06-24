@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import PageSkeleton from "../layout/PageSkeleton";
 
-const ClientOnly = ({ children, ...delegated }) => {
+const ClientOnly = ({ children, ...delegated }): JSX.Element => {
   const [hasMounted, setHasMounted] = useState(false);
 
   useEffect(() => {
@@ -9,7 +9,7 @@ const ClientOnly = ({ children, ...delegated }) => {
   }, []);
 
   if (!hasMounted || !process.browser) {
-    return PageSkeleton;
+    return <PageSkeleton />;
   }
 
   return <div {...delegated}>{children}</div>;

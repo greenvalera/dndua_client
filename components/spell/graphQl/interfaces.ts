@@ -18,15 +18,21 @@ interface Class {
   id: ClassesIds
 }
 
+export type Spell = {
+  id: string
+  description: string
+  name: string
+  enName: string
+  classes: Class[]
+  attributes: SpellAttributes
+}
+
 export interface SpellQueryResult {
-  spell: {
-    id: string
-    description: string
-    name: string
-    enName: string
-    classes: Class[]
-    attributes: SpellAttributes
-  }
+  spell: Spell
+}
+
+export interface SpellListQueryResult{
+  spellList: Spell[]
 }
 
 export interface SpellQueryVariables {

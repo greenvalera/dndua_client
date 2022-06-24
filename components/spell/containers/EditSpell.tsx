@@ -3,14 +3,18 @@ import {useMutation, useQuery} from "@apollo/client";
 import PageSkeleton from "../../../components/layout/PageSkeleton";
 import {SpellQueryResult, SpellQueryVariables} from "../graphQl/interfaces";
 import SPELL_QUERY from "../graphQl/spellQuery.gql";
+import SPELL_LIST_QUERY from "../graphQl/spellListQuery.gql";
 import CreateSpellForm from "../components/SpellCreateForm";
 import UPDATE_SPELL_MUTATION from "../graphQl/updateSpellMutation.gql";
+import {useRouter} from "next/router";
 
 interface EditSpellProps {
   id: string
 }
 
 export const EditSpell: FC<EditSpellProps> = ({id}) => {
+  const router = useRouter();
+
   const {data, loading} = useQuery<SpellQueryResult, SpellQueryVariables>(
     SPELL_QUERY,
     {
@@ -46,9 +50,14 @@ export const EditSpell: FC<EditSpellProps> = ({id}) => {
         variables: {
           id,
           params
-        }
+        },
+        refetchQueries: [
+          {query: SPELL_LIST_QUERY}, // DocumentNode object parsed with gql
+          'SpellListQuery' // Query name
+        ]
       });
-      console.log(result);
+
+      router.push('/spell')
   };
 
   return (
