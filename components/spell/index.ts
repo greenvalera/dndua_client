@@ -1,7 +1,7 @@
-import { CREATE_SPELL_MUTATION } from "./graphQl/createSpell.gql";
-import CreateSpellForm from "./SpellCreateForm";
+import EditSpell from "./containers/EditSpell";
+import CreateSpell from "./containers/CreateSpell";
 
 export {
-  CreateSpellForm,
-  CREATE_SPELL_MUTATION,
+  EditSpell,
+  CreateSpell
 }

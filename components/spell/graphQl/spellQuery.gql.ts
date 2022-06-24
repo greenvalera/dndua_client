@@ -1,8 +1,8 @@
 import {gql} from "@apollo/client";
 
-const CREATE_SPELL_MUTATION = gql`
-  mutation CreteSpellQuery($params: CreateSpellDto!) {
-    createSpell(params: $params) {
+const SPELL_QUERY = gql`
+  query SpellQuery($id: String!) {
+    spell(id: $id) {
       id
       description
       name
@@ -17,6 +17,7 @@ const CREATE_SPELL_MUTATION = gql`
         castingTime
         saveRequired
         attackType
+        ritual
         concentration
         componentVerbal
         componentSomatic
@@ -26,4 +27,4 @@ const CREATE_SPELL_MUTATION = gql`
   }
 `;
 
-export default CREATE_SPELL_MUTATION
+export default SPELL_QUERY;

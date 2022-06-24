@@ -1,4 +1,4 @@
-import React, {FC} from "react";
+import {FC} from "react";
 import {RACE_QUERY} from "../../components/races/graphql/race.gql";
 import client from "../../graphql/client";
 import Page from "../../components/page";

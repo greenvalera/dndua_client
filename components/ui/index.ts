@@ -1,5 +1,5 @@
-import Link from './Link';
+import Alert from './Alert'
 
 export {
-  Link
-};
+  Alert
+}

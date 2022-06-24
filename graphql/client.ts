@@ -10,7 +10,9 @@ const client = new ApolloClient({
     uri: `http://${host}`,
     credentials: 'same-origin',
   }),
-  cache: new InMemoryCache()
+  cache: new InMemoryCache({
+    addTypename: false
+  })
 });
 
 export default client;

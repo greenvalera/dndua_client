@@ -1,8 +1,8 @@
 import {gql} from "@apollo/client";
 
-const CREATE_SPELL_MUTATION = gql`
-  mutation CreteSpellQuery($params: CreateSpellDto!) {
-    createSpell(params: $params) {
+const UPDATE_SPELL_MUTATION = gql`
+  mutation UPDATE_SPELL_MUTATION($id: String!, $params: CreateSpellDto!) {
+    updateSpell(id: $id, params: $params) {
       id
       description
       name
@@ -26,4 +26,4 @@ const CREATE_SPELL_MUTATION = gql`
   }
 `;
 
-export default CREATE_SPELL_MUTATION
+export default UPDATE_SPELL_MUTATION;

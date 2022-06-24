@@ -12,31 +12,15 @@ import {
   TextField,
   Typography
 } from "@mui/material";
-import {AttackType, CastingTime, SaveRequired, Schools, SpellDuration} from "./enums/enums";
+import {AttackType, CastingTime, SaveRequired, Schools, SpellDuration} from "../enums/enums";
 import {FormikProps, useFormik} from 'formik';
 import * as yup from 'yup';
-import {ClassesIds} from "../classes/graphql";
-
-interface FormFields {
-  name?: string,
-  enName?: string,
-  level?: number,
-  school?: Schools,
-  concentration?: boolean,
-  ritual?: boolean,
-  castingTime?: CastingTime,
-  componentVerbal?: boolean,
-  componentSomatic?: boolean,
-  componentMaterial?: boolean,
-  attackType?: AttackType,
-  duration?: SpellDuration,
-  saveRequired?: SaveRequired,
-  classes: ClassesIds[],
-  description: string,
-}
+import {ClassesIds} from "../../classes/graphql";
+import {FormFields} from "../interfaces/FormFields";
 
 interface Props {
-  onSubmit: (data: FormFields) => {}
+  handleSubmit: (data: FormFields) => void,
+  initialValues?: FormFields,
 }
 
 
@@ -54,9 +38,9 @@ const validationSchema = yup.object({
 
 const formControlStyles = { m: 1, minWidth: 207 };
 
-export const CreateSpellForm: FC<Props> = ({onSubmit}) => {
+export const CreateSpellForm: FC<Props> = ({initialValues, handleSubmit}) => {
   const formic: FormikProps<FormFields> = useFormik<FormFields>({
-    initialValues: {
+    initialValues: initialValues || {
       name: '',
       enName: '',
       level: 0,
@@ -75,8 +59,7 @@ export const CreateSpellForm: FC<Props> = ({onSubmit}) => {
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      console.log(values);
-      onSubmit(values);
+      handleSubmit(values);
     }
   });
 
@@ -237,6 +220,7 @@ export const CreateSpellForm: FC<Props> = ({onSubmit}) => {
                   id="componentVerbal"
                   name="componentVerbal"
                   value={formic.values.componentVerbal}
+                  checked={formic.values.componentVerbal}
                   onChange={formic.handleChange}
                 />
               }
@@ -248,6 +232,7 @@ export const CreateSpellForm: FC<Props> = ({onSubmit}) => {
                   id="componentSomatic"
                   name="componentSomatic"
                   value={formic.values.componentSomatic}
+                  checked={formic.values.componentSomatic}
                   onChange={formic.handleChange}
                 />
               }
@@ -259,6 +244,7 @@ export const CreateSpellForm: FC<Props> = ({onSubmit}) => {
                   id="componentMaterial"
                   name="componentMaterial"
                   value={formic.values.componentMaterial}
+                  checked={formic.values.componentMaterial}
                   onChange={formic.handleChange}
                 />
               }
@@ -274,6 +260,7 @@ export const CreateSpellForm: FC<Props> = ({onSubmit}) => {
                 id="concentration"
                 name="concentration"
                 value={formic.values.concentration}
+                checked={formic.values.concentration}
                 onChange={formic.handleChange}
               />
             }
@@ -284,6 +271,7 @@ export const CreateSpellForm: FC<Props> = ({onSubmit}) => {
               <Switch
                 id="ritual"
                 name="ritual"
+                checked={formic.values.ritual}
                 value={formic.values.ritual}
                 onChange={formic.handleChange}
               />
@@ -301,7 +289,6 @@ export const CreateSpellForm: FC<Props> = ({onSubmit}) => {
           label="Опис"
           multiline
           rows={4}
-          defaultValue=""
           fullWidth
           value={formic.values.description}
           onChange={formic.handleChange}
