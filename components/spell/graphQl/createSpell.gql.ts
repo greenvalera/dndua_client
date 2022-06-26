@@ -17,6 +17,7 @@ const CREATE_SPELL_MUTATION = gql`
         castingTime
         saveRequired
         attackType
+        ritual
         concentration
         componentVerbal
         componentSomatic

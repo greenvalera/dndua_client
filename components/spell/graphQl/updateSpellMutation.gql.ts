@@ -18,6 +18,7 @@ const UPDATE_SPELL_MUTATION = gql`
         saveRequired
         attackType
         concentration
+        ritual
         componentVerbal
         componentSomatic
         componentMaterial

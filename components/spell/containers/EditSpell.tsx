@@ -43,21 +43,23 @@ export const EditSpell: FC<EditSpellProps> = ({id}) => {
     classes: data.spell.classes.map(item => item.id)
   };
 
-  console.log(initialValues);
-
   const handleSubmit = async (params) => {
-      const result = await updateSpell({
+      await updateSpell({
         variables: {
           id,
           params
         },
+        update: (cache, { data: { updateSpell } }) => {
+          const data = {spell: updateSpell};
+          cache.writeQuery({ query: SPELL_QUERY, variables: {id}, data});
+        },
         refetchQueries: [
-          {query: SPELL_LIST_QUERY}, // DocumentNode object parsed with gql
-          'SpellListQuery' // Query name
+          {query: SPELL_LIST_QUERY},
+          'SpellListQuery'
         ]
       });
 
-      router.push('/spell')
+      router.push('/spell');
   };
 
   return (

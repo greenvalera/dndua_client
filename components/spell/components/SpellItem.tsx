@@ -2,10 +2,12 @@ import {Spell} from "../graphQl/interfaces";
 import {FC} from "react";
 import {Box, Grid, IconButton, Paper, styled, Typography} from "@mui/material";
 import EditIcon from '@mui/icons-material/Edit';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 
 interface Props {
   spell: Spell,
   getHandleEdit: (id: string) => () => void,
+  getHandleDelete: (id: string) => () => void,
 }
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -14,7 +16,7 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.primary,
 }));
 
-const SpellItem: FC<Props> = ({spell, getHandleEdit}) => {
+const SpellItem: FC<Props> = ({spell, getHandleEdit, getHandleDelete}) => {
   return (
     <Item>
         <Typography variant="h5">
@@ -29,10 +31,18 @@ const SpellItem: FC<Props> = ({spell, getHandleEdit}) => {
               <IconButton
                 onClick={getHandleEdit(spell.id)}
                 color="primary"
-                aria-label="upload picture"
+                aria-label="Змінити заклинання"
                 component="span"
               >
                 <EditIcon />
+              </IconButton>
+              <IconButton
+                onClick={getHandleDelete(spell.id)}
+                color="primary"
+                aria-label="Видалити заклинання"
+                component="span"
+              >
+                <DeleteForeverIcon />
               </IconButton>
             </Grid>
           </Grid>
