@@ -9,3 +9,11 @@ export interface RaceData {
 export interface RaceVars {
   id: string
 }
+
+interface Race {
+  id
+}
+
+export interface RacesData {
+  races?: Race[];
+}

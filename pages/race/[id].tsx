@@ -1,10 +1,11 @@
 import {FC} from "react";
-import {RACE_QUERY} from "../../components/races/graphql/race.gql";
 import client from "../../graphql/client";
 import Page from "../../components/page";
-import {RaceData, RaceVars} from "../../components/races/graphql/interfaces";
+import {RaceData, RacesData, RaceVars} from "../../components/races/graphql/interfaces";
 import PageSkeleton from "../../components/layout/PageSkeleton";
 import useLoading from "../../utils/useLoading";
+import {RACES_QUERY} from "../../components/races/graphql/races.gql";
+import {RACE_QUERY} from "../../components/races/graphql/race.gql";
 
 interface RacePageProps {
   content: string;
@@ -22,8 +23,19 @@ const RacePage: FC<RacePageProps> = ({content}) => {
   )
 }
 
-export async function getServerSideProps(context) {
-  const {id} = context.query;
+export async function getStaticPaths() {
+  const {data} = await client.query<RacesData>({
+    query: RACES_QUERY,
+  });
+
+    return {
+      paths: data.races.map(({id}) => ({params: {id}})),
+      fallback: false, // can also be true or 'blocking'
+  }
+}
+
+export async function getStaticProps({params}) {
+  const {id} = params;
   const {data} = await client.query<RaceData, RaceVars>({
     query: RACE_QUERY,
     variables: {id}
