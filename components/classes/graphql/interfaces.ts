@@ -9,3 +9,11 @@ export interface ClassData {
 export interface ClassVars {
   id: string
 }
+
+interface Class {
+  id: string
+}
+
+export interface ClassesData {
+  classes: Class[]
+}
