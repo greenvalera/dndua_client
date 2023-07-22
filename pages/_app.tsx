@@ -1,24 +1,21 @@
-import {
-  ApolloProvider,
-} from "@apollo/client";
+import { Amplify } from 'aws-amplify';
+import awsconfig from '../src/aws-exports';
+Amplify.configure(awsconfig);
 import AuthZone from "../components/layout/AuthZone";
 import {ThemeProvider} from "@mui/material";
 import {createTheme} from "@mui/material/styles";
-import client from "../graphql/client";
-import {ComponentPreviews, useInitial} from "../dev";
+
 
 const theme = createTheme();
 
 export default function App({Component, pageProps}) {
   return (
     <>
-      <ApolloProvider client={client}>
-        <ThemeProvider theme={theme}>
-          <AuthZone>
-              <Component {...pageProps}/>
-          </AuthZone>
-        </ThemeProvider>
-      </ApolloProvider>
+      <ThemeProvider theme={theme}>
+        <AuthZone>
+          <Component {...pageProps}/>
+        </AuthZone>
+      </ThemeProvider>
     </>
   );
 }
