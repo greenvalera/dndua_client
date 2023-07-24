@@ -1,0 +1,23 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-dndua-dev-152635-authRole",
+      "UnauthRoleArn": "arn:aws:iam::407549173280:role/amplify-dndua-dev-152635-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::407549173280:role/amplify-dndua-dev-152635-authRole",
+      "Region": "eu-central-1",
+      "DeploymentBucketName": "amplify-dndua-dev-152635-deployment",
+      "UnauthRoleName": "amplify-dndua-dev-152635-unauthRole",
+      "StackName": "amplify-dndua-dev-152635",
+      "StackId": "arn:aws:cloudformation:eu-central-1:407549173280:stack/amplify-dndua-dev-152635/38043160-27ca-11ee-87c1-02096fe9e152",
+      "AmplifyAppId": "d1528nclds18vt"
+    },
+    "categories": {
+      "auth": {
+        "dndua70c145f8": {}
+      },
+      "api": {
+        "dndua": {}
+      }
+    }
+  }
+}
