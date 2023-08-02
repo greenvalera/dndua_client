@@ -7,10 +7,12 @@ export const getSource = /* GraphQL */ `
     getSource(id: $id) {
       id
       name
+      nameTranslated
       code
       isOfficial
       createdAt
       updatedAt
+      __typename
     }
   }
 `;
@@ -24,12 +26,15 @@ export const listSources = /* GraphQL */ `
       items {
         id
         name
+        nameTranslated
         code
         isOfficial
         createdAt
         updatedAt
+        __typename
       }
       nextToken
+      __typename
     }
   }
 `;
@@ -38,19 +43,23 @@ export const getRace = /* GraphQL */ `
     getRace(id: $id) {
       id
       name
+      nameTranslated
       content
       image
       source {
         id
         name
+        nameTranslated
         code
         isOfficial
         createdAt
         updatedAt
+        __typename
       }
       createdAt
       updatedAt
       raceSourceId
+      __typename
     }
   }
 `;
@@ -64,21 +73,26 @@ export const listRaces = /* GraphQL */ `
       items {
         id
         name
+        nameTranslated
         content
         image
         source {
           id
           name
+          nameTranslated
           code
           isOfficial
           createdAt
           updatedAt
+          __typename
         }
         createdAt
         updatedAt
         raceSourceId
+        __typename
       }
       nextToken
+      __typename
     }
   }
 `;
@@ -87,15 +101,18 @@ export const getClass = /* GraphQL */ `
     getClass(id: $id) {
       id
       name
+      nameTranslated
       content
       image
       source {
         id
         name
+        nameTranslated
         code
         isOfficial
         createdAt
         updatedAt
+        __typename
       }
       subclasses {
         items {
@@ -108,8 +125,10 @@ export const getClass = /* GraphQL */ `
           updatedAt
           classSubclassesId
           subclassSourceId
+          __typename
         }
         nextToken
+        __typename
       }
       spells {
         items {
@@ -118,12 +137,15 @@ export const getClass = /* GraphQL */ `
           spellId
           createdAt
           updatedAt
+          __typename
         }
         nextToken
+        __typename
       }
       createdAt
       updatedAt
       classSourceId
+      __typename
     }
   }
 `;
@@ -137,27 +159,34 @@ export const listClasses = /* GraphQL */ `
       items {
         id
         name
+        nameTranslated
         content
         image
         source {
           id
           name
+          nameTranslated
           code
           isOfficial
           createdAt
           updatedAt
+          __typename
         }
         subclasses {
           nextToken
+          __typename
         }
         spells {
           nextToken
+          __typename
         }
         createdAt
         updatedAt
         classSourceId
+        __typename
       }
       nextToken
+      __typename
     }
   }
 `;
@@ -172,38 +201,47 @@ export const getSubclass = /* GraphQL */ `
       class {
         id
         name
+        nameTranslated
         content
         image
         source {
           id
           name
+          nameTranslated
           code
           isOfficial
           createdAt
           updatedAt
+          __typename
         }
         subclasses {
           nextToken
+          __typename
         }
         spells {
           nextToken
+          __typename
         }
         createdAt
         updatedAt
         classSourceId
+        __typename
       }
       source {
         id
         name
+        nameTranslated
         code
         isOfficial
         createdAt
         updatedAt
+        __typename
       }
       createdAt
       updatedAt
       classSubclassesId
       subclassSourceId
+      __typename
     }
   }
 `;
@@ -223,26 +261,32 @@ export const listSubclasses = /* GraphQL */ `
         class {
           id
           name
+          nameTranslated
           content
           image
           createdAt
           updatedAt
           classSourceId
+          __typename
         }
         source {
           id
           name
+          nameTranslated
           code
           isOfficial
           createdAt
           updatedAt
+          __typename
         }
         createdAt
         updatedAt
         classSubclassesId
         subclassSourceId
+        __typename
       }
       nextToken
+      __typename
     }
   }
 `;
@@ -257,10 +301,12 @@ export const getSpell = /* GraphQL */ `
       source {
         id
         name
+        nameTranslated
         code
         isOfficial
         createdAt
         updatedAt
+        __typename
       }
       classes {
         items {
@@ -269,8 +315,10 @@ export const getSpell = /* GraphQL */ `
           spellId
           createdAt
           updatedAt
+          __typename
         }
         nextToken
+        __typename
       }
       level
       school
@@ -286,6 +334,7 @@ export const getSpell = /* GraphQL */ `
       createdAt
       updatedAt
       spellSourceId
+      __typename
     }
   }
 `;
@@ -305,13 +354,16 @@ export const listSpells = /* GraphQL */ `
         source {
           id
           name
+          nameTranslated
           code
           isOfficial
           createdAt
           updatedAt
+          __typename
         }
         classes {
           nextToken
+          __typename
         }
         level
         school
@@ -327,8 +379,10 @@ export const listSpells = /* GraphQL */ `
         createdAt
         updatedAt
         spellSourceId
+        __typename
       }
       nextToken
+      __typename
     }
   }
 `;
@@ -341,25 +395,31 @@ export const getSpellClass = /* GraphQL */ `
       class {
         id
         name
+        nameTranslated
         content
         image
         source {
           id
           name
+          nameTranslated
           code
           isOfficial
           createdAt
           updatedAt
+          __typename
         }
         subclasses {
           nextToken
+          __typename
         }
         spells {
           nextToken
+          __typename
         }
         createdAt
         updatedAt
         classSourceId
+        __typename
       }
       spell {
         id
@@ -370,13 +430,16 @@ export const getSpellClass = /* GraphQL */ `
         source {
           id
           name
+          nameTranslated
           code
           isOfficial
           createdAt
           updatedAt
+          __typename
         }
         classes {
           nextToken
+          __typename
         }
         level
         school
@@ -392,9 +455,11 @@ export const getSpellClass = /* GraphQL */ `
         createdAt
         updatedAt
         spellSourceId
+        __typename
       }
       createdAt
       updatedAt
+      __typename
     }
   }
 `;
@@ -412,11 +477,13 @@ export const listSpellClasses = /* GraphQL */ `
         class {
           id
           name
+          nameTranslated
           content
           image
           createdAt
           updatedAt
           classSourceId
+          __typename
         }
         spell {
           id
@@ -438,11 +505,14 @@ export const listSpellClasses = /* GraphQL */ `
           createdAt
           updatedAt
           spellSourceId
+          __typename
         }
         createdAt
         updatedAt
+        __typename
       }
       nextToken
+      __typename
     }
   }
 `;
@@ -468,11 +538,13 @@ export const spellClassesByClassId = /* GraphQL */ `
         class {
           id
           name
+          nameTranslated
           content
           image
           createdAt
           updatedAt
           classSourceId
+          __typename
         }
         spell {
           id
@@ -494,11 +566,14 @@ export const spellClassesByClassId = /* GraphQL */ `
           createdAt
           updatedAt
           spellSourceId
+          __typename
         }
         createdAt
         updatedAt
+        __typename
       }
       nextToken
+      __typename
     }
   }
 `;
@@ -524,11 +599,13 @@ export const spellClassesBySpellId = /* GraphQL */ `
         class {
           id
           name
+          nameTranslated
           content
           image
           createdAt
           updatedAt
           classSourceId
+          __typename
         }
         spell {
           id
@@ -550,11 +627,14 @@ export const spellClassesBySpellId = /* GraphQL */ `
           createdAt
           updatedAt
           spellSourceId
+          __typename
         }
         createdAt
         updatedAt
+        __typename
       }
       nextToken
+      __typename
     }
   }
 `;

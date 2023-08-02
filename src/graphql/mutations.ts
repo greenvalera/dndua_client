@@ -10,10 +10,12 @@ export const createSource = /* GraphQL */ `
     createSource(input: $input, condition: $condition) {
       id
       name
+      nameTranslated
       code
       isOfficial
       createdAt
       updatedAt
+      __typename
     }
   }
 `;
@@ -25,10 +27,12 @@ export const updateSource = /* GraphQL */ `
     updateSource(input: $input, condition: $condition) {
       id
       name
+      nameTranslated
       code
       isOfficial
       createdAt
       updatedAt
+      __typename
     }
   }
 `;
@@ -40,10 +44,12 @@ export const deleteSource = /* GraphQL */ `
     deleteSource(input: $input, condition: $condition) {
       id
       name
+      nameTranslated
       code
       isOfficial
       createdAt
       updatedAt
+      __typename
     }
   }
 `;
@@ -55,19 +61,23 @@ export const createRace = /* GraphQL */ `
     createRace(input: $input, condition: $condition) {
       id
       name
+      nameTranslated
       content
       image
       source {
         id
         name
+        nameTranslated
         code
         isOfficial
         createdAt
         updatedAt
+        __typename
       }
       createdAt
       updatedAt
       raceSourceId
+      __typename
     }
   }
 `;
@@ -79,19 +89,23 @@ export const updateRace = /* GraphQL */ `
     updateRace(input: $input, condition: $condition) {
       id
       name
+      nameTranslated
       content
       image
       source {
         id
         name
+        nameTranslated
         code
         isOfficial
         createdAt
         updatedAt
+        __typename
       }
       createdAt
       updatedAt
       raceSourceId
+      __typename
     }
   }
 `;
@@ -103,19 +117,23 @@ export const deleteRace = /* GraphQL */ `
     deleteRace(input: $input, condition: $condition) {
       id
       name
+      nameTranslated
       content
       image
       source {
         id
         name
+        nameTranslated
         code
         isOfficial
         createdAt
         updatedAt
+        __typename
       }
       createdAt
       updatedAt
       raceSourceId
+      __typename
     }
   }
 `;
@@ -127,15 +145,18 @@ export const createClass = /* GraphQL */ `
     createClass(input: $input, condition: $condition) {
       id
       name
+      nameTranslated
       content
       image
       source {
         id
         name
+        nameTranslated
         code
         isOfficial
         createdAt
         updatedAt
+        __typename
       }
       subclasses {
         items {
@@ -148,8 +169,10 @@ export const createClass = /* GraphQL */ `
           updatedAt
           classSubclassesId
           subclassSourceId
+          __typename
         }
         nextToken
+        __typename
       }
       spells {
         items {
@@ -158,12 +181,15 @@ export const createClass = /* GraphQL */ `
           spellId
           createdAt
           updatedAt
+          __typename
         }
         nextToken
+        __typename
       }
       createdAt
       updatedAt
       classSourceId
+      __typename
     }
   }
 `;
@@ -175,15 +201,18 @@ export const updateClass = /* GraphQL */ `
     updateClass(input: $input, condition: $condition) {
       id
       name
+      nameTranslated
       content
       image
       source {
         id
         name
+        nameTranslated
         code
         isOfficial
         createdAt
         updatedAt
+        __typename
       }
       subclasses {
         items {
@@ -196,8 +225,10 @@ export const updateClass = /* GraphQL */ `
           updatedAt
           classSubclassesId
           subclassSourceId
+          __typename
         }
         nextToken
+        __typename
       }
       spells {
         items {
@@ -206,12 +237,15 @@ export const updateClass = /* GraphQL */ `
           spellId
           createdAt
           updatedAt
+          __typename
         }
         nextToken
+        __typename
       }
       createdAt
       updatedAt
       classSourceId
+      __typename
     }
   }
 `;
@@ -223,15 +257,18 @@ export const deleteClass = /* GraphQL */ `
     deleteClass(input: $input, condition: $condition) {
       id
       name
+      nameTranslated
       content
       image
       source {
         id
         name
+        nameTranslated
         code
         isOfficial
         createdAt
         updatedAt
+        __typename
       }
       subclasses {
         items {
@@ -244,8 +281,10 @@ export const deleteClass = /* GraphQL */ `
           updatedAt
           classSubclassesId
           subclassSourceId
+          __typename
         }
         nextToken
+        __typename
       }
       spells {
         items {
@@ -254,12 +293,15 @@ export const deleteClass = /* GraphQL */ `
           spellId
           createdAt
           updatedAt
+          __typename
         }
         nextToken
+        __typename
       }
       createdAt
       updatedAt
       classSourceId
+      __typename
     }
   }
 `;
@@ -277,38 +319,47 @@ export const createSubclass = /* GraphQL */ `
       class {
         id
         name
+        nameTranslated
         content
         image
         source {
           id
           name
+          nameTranslated
           code
           isOfficial
           createdAt
           updatedAt
+          __typename
         }
         subclasses {
           nextToken
+          __typename
         }
         spells {
           nextToken
+          __typename
         }
         createdAt
         updatedAt
         classSourceId
+        __typename
       }
       source {
         id
         name
+        nameTranslated
         code
         isOfficial
         createdAt
         updatedAt
+        __typename
       }
       createdAt
       updatedAt
       classSubclassesId
       subclassSourceId
+      __typename
     }
   }
 `;
@@ -326,38 +377,47 @@ export const updateSubclass = /* GraphQL */ `
       class {
         id
         name
+        nameTranslated
         content
         image
         source {
           id
           name
+          nameTranslated
           code
           isOfficial
           createdAt
           updatedAt
+          __typename
         }
         subclasses {
           nextToken
+          __typename
         }
         spells {
           nextToken
+          __typename
         }
         createdAt
         updatedAt
         classSourceId
+        __typename
       }
       source {
         id
         name
+        nameTranslated
         code
         isOfficial
         createdAt
         updatedAt
+        __typename
       }
       createdAt
       updatedAt
       classSubclassesId
       subclassSourceId
+      __typename
     }
   }
 `;
@@ -375,38 +435,47 @@ export const deleteSubclass = /* GraphQL */ `
       class {
         id
         name
+        nameTranslated
         content
         image
         source {
           id
           name
+          nameTranslated
           code
           isOfficial
           createdAt
           updatedAt
+          __typename
         }
         subclasses {
           nextToken
+          __typename
         }
         spells {
           nextToken
+          __typename
         }
         createdAt
         updatedAt
         classSourceId
+        __typename
       }
       source {
         id
         name
+        nameTranslated
         code
         isOfficial
         createdAt
         updatedAt
+        __typename
       }
       createdAt
       updatedAt
       classSubclassesId
       subclassSourceId
+      __typename
     }
   }
 `;
@@ -424,10 +493,12 @@ export const createSpell = /* GraphQL */ `
       source {
         id
         name
+        nameTranslated
         code
         isOfficial
         createdAt
         updatedAt
+        __typename
       }
       classes {
         items {
@@ -436,8 +507,10 @@ export const createSpell = /* GraphQL */ `
           spellId
           createdAt
           updatedAt
+          __typename
         }
         nextToken
+        __typename
       }
       level
       school
@@ -453,6 +526,7 @@ export const createSpell = /* GraphQL */ `
       createdAt
       updatedAt
       spellSourceId
+      __typename
     }
   }
 `;
@@ -470,10 +544,12 @@ export const updateSpell = /* GraphQL */ `
       source {
         id
         name
+        nameTranslated
         code
         isOfficial
         createdAt
         updatedAt
+        __typename
       }
       classes {
         items {
@@ -482,8 +558,10 @@ export const updateSpell = /* GraphQL */ `
           spellId
           createdAt
           updatedAt
+          __typename
         }
         nextToken
+        __typename
       }
       level
       school
@@ -499,6 +577,7 @@ export const updateSpell = /* GraphQL */ `
       createdAt
       updatedAt
       spellSourceId
+      __typename
     }
   }
 `;
@@ -516,10 +595,12 @@ export const deleteSpell = /* GraphQL */ `
       source {
         id
         name
+        nameTranslated
         code
         isOfficial
         createdAt
         updatedAt
+        __typename
       }
       classes {
         items {
@@ -528,8 +609,10 @@ export const deleteSpell = /* GraphQL */ `
           spellId
           createdAt
           updatedAt
+          __typename
         }
         nextToken
+        __typename
       }
       level
       school
@@ -545,6 +628,7 @@ export const deleteSpell = /* GraphQL */ `
       createdAt
       updatedAt
       spellSourceId
+      __typename
     }
   }
 `;
@@ -560,25 +644,31 @@ export const createSpellClass = /* GraphQL */ `
       class {
         id
         name
+        nameTranslated
         content
         image
         source {
           id
           name
+          nameTranslated
           code
           isOfficial
           createdAt
           updatedAt
+          __typename
         }
         subclasses {
           nextToken
+          __typename
         }
         spells {
           nextToken
+          __typename
         }
         createdAt
         updatedAt
         classSourceId
+        __typename
       }
       spell {
         id
@@ -589,13 +679,16 @@ export const createSpellClass = /* GraphQL */ `
         source {
           id
           name
+          nameTranslated
           code
           isOfficial
           createdAt
           updatedAt
+          __typename
         }
         classes {
           nextToken
+          __typename
         }
         level
         school
@@ -611,9 +704,11 @@ export const createSpellClass = /* GraphQL */ `
         createdAt
         updatedAt
         spellSourceId
+        __typename
       }
       createdAt
       updatedAt
+      __typename
     }
   }
 `;
@@ -629,25 +724,31 @@ export const updateSpellClass = /* GraphQL */ `
       class {
         id
         name
+        nameTranslated
         content
         image
         source {
           id
           name
+          nameTranslated
           code
           isOfficial
           createdAt
           updatedAt
+          __typename
         }
         subclasses {
           nextToken
+          __typename
         }
         spells {
           nextToken
+          __typename
         }
         createdAt
         updatedAt
         classSourceId
+        __typename
       }
       spell {
         id
@@ -658,13 +759,16 @@ export const updateSpellClass = /* GraphQL */ `
         source {
           id
           name
+          nameTranslated
           code
           isOfficial
           createdAt
           updatedAt
+          __typename
         }
         classes {
           nextToken
+          __typename
         }
         level
         school
@@ -680,9 +784,11 @@ export const updateSpellClass = /* GraphQL */ `
         createdAt
         updatedAt
         spellSourceId
+        __typename
       }
       createdAt
       updatedAt
+      __typename
     }
   }
 `;
@@ -698,25 +804,31 @@ export const deleteSpellClass = /* GraphQL */ `
       class {
         id
         name
+        nameTranslated
         content
         image
         source {
           id
           name
+          nameTranslated
           code
           isOfficial
           createdAt
           updatedAt
+          __typename
         }
         subclasses {
           nextToken
+          __typename
         }
         spells {
           nextToken
+          __typename
         }
         createdAt
         updatedAt
         classSourceId
+        __typename
       }
       spell {
         id
@@ -727,13 +839,16 @@ export const deleteSpellClass = /* GraphQL */ `
         source {
           id
           name
+          nameTranslated
           code
           isOfficial
           createdAt
           updatedAt
+          __typename
         }
         classes {
           nextToken
+          __typename
         }
         level
         school
@@ -749,9 +864,11 @@ export const deleteSpellClass = /* GraphQL */ `
         createdAt
         updatedAt
         spellSourceId
+        __typename
       }
       createdAt
       updatedAt
+      __typename
     }
   }
 `;

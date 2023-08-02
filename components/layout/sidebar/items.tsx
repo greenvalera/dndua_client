@@ -19,42 +19,47 @@ export const items: MenuItem[] = [
       {
         title: "Людина",
         to: "/race/human",
-        items: []
+        items: [],
       },
       {
         title: "Эльф",
         to: "/race/elf",
-        items: []
+        items: [],
       },
       {
         title: "Дварф",
         to: "/race/dwarf",
-        items: []
+        items: [],
       },
       {
         title: "Напів-рослик",
         to: "/race/halfling",
-        items: []
+        items: [],
       },
       {
         title: "Гном",
         to: "/race/gnome",
-        items: []
+        items: [],
       },
       {
         title: "Напів-єльф",
-        to: "/race/halfelf",
+        to: "/race/half-elf",
         items: []
       },
       {
         title: "Напів-орк",
-        to: "/race/halforc",
-        items: []
+        to: "/race/half-orc",
+        items: [],
+      },
+      {
+        title: "Тіфлінг",
+        to: "/race/tiefling",
+        items: [],
       },
       {
         title: "Драконороджений",
         to: "/race/dragonborn",
-        items: []
+        items: [],
       },
     ]
   },

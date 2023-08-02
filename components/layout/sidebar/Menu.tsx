@@ -4,7 +4,6 @@ import {ExpandLess as ExpandLessIcon, ExpandMore as ExpandMoreIcon} from "@mui/i
 import { items } from "./items";
 import { hasChildren } from "./utils";
 import {MenuItem as IMenuItem} from "./items";
-//import {Link} from "react-router-dom";
 import ListItemButton from "@mui/material/ListItemButton";
 import Link from "next/link";
 import {useRouter} from "next/router";
