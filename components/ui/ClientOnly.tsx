@@ -1,7 +1,7 @@
-import {useEffect, useState} from "react";
+import {FunctionComponent, PropsWithChildren, useEffect, useState} from "react";
 import PageSkeleton from "../layout/PageSkeleton";
 
-const ClientOnly = ({ children, ...delegated }): JSX.Element => {
+const ClientOnly: FunctionComponent<PropsWithChildren<any>> = ({ children, ...delegated }) => {
   const [hasMounted, setHasMounted] = useState(false);
 
   useEffect(() => {
